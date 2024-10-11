@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego: Piedra, Papel o Tijeras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Juego: Piedra, Papel o Tijeras</h1>
+        
+        <!-- Contenedor para formularios -->
+        <div id="contenedor-formularios">
+            <!-- Formulario de Inicio de Sesión -->
+            <form id="formulario-inicio-sesion">
+                <h2>Iniciar Sesión</h2>
+                <input type="text" id="usuario-inicio-sesion" placeholder="Usuario" required>
+                <input type="password" id="contraseña-inicio-sesion" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+                <p>No tienes cuenta? <a href="#" id="cambiar-a-registro">Regístrate</a></p>
+            </form>
+
+            <!-- Formulario de Registro -->
+            <form id="formulario-registro" style="display:none;">
+                <h2>Registro</h2>
+                <input type="text" id="usuario-registro" placeholder="Usuario" required>
+                <input type="password" id="contraseña-registro" placeholder="Contraseña" required>
+                <button type="submit">Registrarse</button>
+                <p>Ya tienes cuenta? <a href="#" id="cambiar-a-inicio-sesion">Iniciar Sesión</a></p>
+            </form>
+        </div>
+
+        <!-- Interfaz del Juego -->
+        <div id="interfaz-juego" style="display:none;">
+            <h2>¡Bienvenido, <span id="mostrar-usuario"></span>!</h2>
+            <h3>¡Elige tu jugada!</h3>
+            <div class="game-interface">
+                <div class="game-choices">
+                    <img src="imagenes/piedra.png" alt="Piedra" class="game-choice" data-choice="piedra">
+                    <img src="imagenes/papel.png" alt="Papel" class="game-choice" data-choice="papel">
+                    <img src="imagenes/tijeras.png" alt="Tijeras" class="game-choice" data-choice="tijeras">
+                </div>
+            </div>
+
+            <h3>Resultado del juego:</h3>
+            <div class="game-result-container">
+                <p>Tu elección: <span id="eleccion-jugador"></span></p>
+                <img id="eleccion-jugador-img" src="" alt="Tu elección" class="result-image">
+                <p>Elección de la máquina: <span id="eleccion-maquina"></span></p>
+                <img id="eleccion-maquina-img" src="" alt="Elección de la máquina" class="result-image">
+                <p id="resultado-juego"></p>
+            </div>
+            <button id="cerrar-sesion-boton">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
